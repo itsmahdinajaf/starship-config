@@ -1,0 +1,134 @@
+#format = '$all'
+
+format = ' 🪿 $username$hostname$localip$directory$git_branch$git_commit$git_state$git_status$conda$python$nodejs$java$rust$golang$docker_context$time$character '
+
+
+[username]
+style_user = "bold green"
+style_root = "bold red"
+format = "[$user]($style) "
+disabled = false
+
+[hostname]
+ssh_only = true
+format = 'on [$hostname](bold yellow) '
+trim_at = "."
+disabled = false
+
+[localip]
+ssh_only = true
+format = '📟 [$localipv4](bold red) '
+disabled = false
+
+[time]
+disabled = false
+style = "bold bright-black"
+format = "[$time]($style) "
+
+[directory]
+truncation_length = 10
+truncate_to_repo = true
+style = "bold italic blue"
+
+[line_break]
+disabled = true
+
+[character]
+success_symbol = "[✔ ﬌](fg:#88cc88)"
+error_symbol = "[✗ ﬌](fg:#ff6b6b)"
+format = "$symbol"
+disabled = false
+
+[git_branch]
+disabled = false
+symbol = "🌿 "
+style = "fg:#88B6A2"
+truncation_length = 5
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_commit]
+disabled = false
+commit_hash_length = 1
+
+[git_state]
+disabled = false
+rebase = "⤴ rebasing"
+merge = "🔀 merging"
+revert = "↩ reverting"
+cherry_pick = "🍒 picking"
+bisect = "🔍 bisecting"
+am = "✉ am'ing"
+am_or_rebase = "✉/⤴"
+
+[git_status]
+disabled = false
+style = "fg:#88B6A2"
+stashed = "📦 ${count} "
+ahead = "⬆️ ${count} "
+behind = "⬇️ ${count} "
+diverged = "🔀 ${ahead_count} ${behind_count} "
+conflicted = "⚔️ ${count} "
+deleted = "🗑 ${count} "
+renamed = "📝 ${count} "
+modified = "✏️ ${count} "
+staged = "✅ ${count} "
+untracked = "🆕 ${count}"
+
+# ---------------- Languages ------------------
+
+[java]
+disabled = false
+symbol = "☕ "
+format = '[${symbol}]($style)'
+style = "fg:#88B6A2"
+
+[python]
+symbol = "🐍 "
+format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
+style = "fg:#88B6A2"
+
+[lua]
+disabled = false
+symbol = "🌙 "
+format = '[${symbol}]($style)'
+style = "fg:#88B6A2"
+
+[nodejs]
+disabled = false
+symbol = "🟢 "
+format = '[${symbol}]($style)'
+style = "fg:#88B6A2"
+
+[package]
+disabled = false
+symbol = "📦 "
+display_private = false
+format = '[${symbol}]($style)'
+style = "fg:#88B6A2"
+
+[conda]
+symbol = "🧪📦 "
+style = "fg:#88B6A2"
+format = 'via [$symbol$environment]($style) '
+disabled = false
+
+[docker_context]
+symbol = "🐳 "
+format = "via [$symbol$context]($style) "
+style = "fg:#88B6A2"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+disabled = false
+
+[golang]
+disabled = false
+symbol = "🐹 "
+format = '[${symbol}]($style)'
+style = "fg:#88B6A2"
+
+[rust]
+disabled = false
+symbol = "🦀 "
+format = '[${symbol}]($style)'
+style = "fg:#88B6A2"
