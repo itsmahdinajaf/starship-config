@@ -26,9 +26,9 @@ style = "bold bright-black"
 format = "[$time]($style) "
 
 [directory]
-truncation_length = 10
+truncation_length = 3
 truncate_to_repo = true
-style = "bold italic blue"
+style = "bold blue"
 
 [line_break]
 disabled = true
